@@ -1,8 +1,17 @@
 "use client"
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Loading = () => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      // Lakukan sesuatu setelah 1 detik, misalnya menampilkan komponen lain
+    }, 1000);
+
+    // Bersihkan timer saat komponen di-unmount
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="loading-container">
       <div className="loader"></div>

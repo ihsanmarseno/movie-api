@@ -3,12 +3,12 @@ import MovieList from "../components/MovieList";
 import Link from "next/link";
 
 export default function LimitedPopularMovies({ api, title, caption }) {
-  const limitedMovies = api.results.slice(0, 8);
+  const limitedMovies = api.results.slice(0, 4);
 
   return (
     <>
       <div className="flex items-center justify-between pt-4">
-        <p className="ml-8 text-xl font-semibold">{title}</p>
+        <p className="ml-8 text-2xl font-semibold">{title}</p>
         <Link href="/popular" className="mr-8 text-white underline">
             {caption}
         </Link>

@@ -9,7 +9,7 @@ export default async function PopularMovies() {
 
   return (
     <div>
-      <p className="pt-4 pl-8 text-xl font-semibold">Popular Movies</p>
+      <p className="pt-4 pl-8 text-2xl font-semibold">Popular Movies</p>
       <div className="grid grid-cols-1 lg:gap-10 md:gap-5 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-3">
       {popularMovies.results.map((movie) => {
         return (
