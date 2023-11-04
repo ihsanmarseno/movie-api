@@ -1,17 +1,21 @@
-import { Nunito } from 'next/font/google'
-import './globals.css'
+import { Montserrat } from "next/font/google";
+import "./globals.css";
+import Navbar from "./components/Navbar";
 
-const nunito = Nunito({ subsets: ['latin'] })
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Movie List API',
-  description: 'Aplikasi List Movie',
-}
+  title: "Popular Movies",
+  description: "Aplikasi List Movie",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={nunito.className}>{children}</body>
+      <body className={`${montserrat.className} bg-[#ECE3CE]`}>
+        <Navbar />
+        {children}
+      </body>
     </html>
-  )
+  );
 }
