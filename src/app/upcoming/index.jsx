@@ -3,7 +3,7 @@ import MovieList from "../components/MovieList";
 import Link from "next/link";
 
 export default function LimitedPopularMovies({ api, title, caption }) {
-  const limitedPopularMovies = api.results.slice(0, 4);
+  const limitedUpcomingMovies = api.results.slice(0, 4);
 
   return (
     <>
@@ -14,7 +14,7 @@ export default function LimitedPopularMovies({ api, title, caption }) {
         </Link>
       </div>
       <div className="grid flex-wrap lg:gap-10 md:gap-5 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-3">
-        {limitedPopularMovies.map((movie) => {
+        {limitedUpcomingMovies.map((movie) => {
           return (
             <div
               key={movie.id}
