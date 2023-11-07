@@ -1,14 +1,41 @@
-import LimitedPopularMovies from "./popular";
+import { getPopularResponse } from "./libs/api-libs";
+import HomePageMovies from "./homepage";
 
 export default async function Home() {
-  const response = await fetch(
-    `${process.env.NEXT_BASE_URL}/movie/popular?api_key=${process.env.NEXT_API_KEY}`
+  const limitedPopularMovies = await getPopularResponse(
+    "movie/popular",
+    "page=1"
   );
-  const limitedPopularMovies = await response.json();
+  const limitedUpcomingMovies = await getPopularResponse(
+    "movie/upcoming",
+    "page=1"
+  );
+
+  const limitedNowPlayingMovies = await getPopularResponse(
+    "movie/now_playing",
+    "page=1"
+  );
 
   return (
     <div>
-      <LimitedPopularMovies api={limitedPopularMovies} title="Popular Movies" caption="Show All" />
+      <HomePageMovies
+        api={limitedPopularMovies}
+        title="Popular Movies"
+        caption="Show All"
+        resource="popular"
+      />
+      <HomePageMovies
+        api={limitedUpcomingMovies}
+        title="Upcoming Movies"
+        caption="Show All"
+        resource="upcoming"
+      />
+      <HomePageMovies
+        api={limitedNowPlayingMovies}
+        title="Now Playing"
+        caption="Show All"
+        resource="now_playing"
+      />
     </div>
   );
 }
