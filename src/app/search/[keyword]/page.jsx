@@ -1,10 +1,10 @@
 import MovieList from "@/app/components/MovieList";
-import { getSearchMoviesResponse } from "@/app/libs/api-libs";
+import { getMoviesResponse } from "@/app/libs/api-libs";
 import React from "react";
 
 export default async function Search({ params }) {
 
-  const searchMovies = await getSearchMoviesResponse("search/movie", `${params.keyword}`);
+  const searchMovies = await getMoviesResponse("search/movie", `query=${params.keyword}`);
 
   const decodedSearchTerm = decodeURIComponent(params.keyword);
 

@@ -1,9 +1,9 @@
 import MovieList from "../components/MovieList";
 import HeaderMenu from "../components/Utilities/HeaderMenu";
-import { getNowPlayingResponse } from "../libs/api-libs";
+import { getMoviesResponse } from "../libs/api-libs";
 
 const Page = async() => {
-  const nowPlayingMovies = await getNowPlayingResponse("movie/now_playing")
+  const nowPlayingMovies = await getMoviesResponse("movie/now_playing")
 
   return (
     <>

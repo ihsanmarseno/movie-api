@@ -1,17 +1,17 @@
-import { getPopularResponse } from "./libs/api-libs";
+import { getMoviesResponse } from "./libs/api-libs";
 import HomePageMovies from "./homepage";
 
 export default async function Home() {
-  const limitedPopularMovies = await getPopularResponse(
+  const limitedPopularMovies = await getMoviesResponse(
     "movie/popular",
     "page=1"
   );
-  const limitedUpcomingMovies = await getPopularResponse(
+  const limitedUpcomingMovies = await getMoviesResponse(
     "movie/upcoming",
     "page=1"
   );
 
-  const limitedNowPlayingMovies = await getPopularResponse(
+  const limitedNowPlayingMovies = await getMoviesResponse(
     "movie/now_playing",
     "page=1"
   );
