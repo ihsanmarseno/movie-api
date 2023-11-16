@@ -89,7 +89,7 @@ export default function DetailMovies({api}) {
           </div>
           <div>
             <p className="text-xl font-semibold ">Additional Information : </p>
-            <Link href={`https://www.imdb.com/title/${api.imdb_id}`}>
+            <Link href={`https://www.imdb.com/title/${api.imdb_id}`} target="_blank">
               <button className=" mt-2 btn btn-wide bg-[#363062] border border-[#363062] text-white hover:text-black mb-4 lg:mb-0">
                 IMDb
               </button>
