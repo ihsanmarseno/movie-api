@@ -8,7 +8,9 @@ export default function DetailMovies({api}) {
       <div className="pt-4 mx-8">
         <div>
           <p className="text-2xl font-semibold">{api.title}</p>
-          <p className="text-lg">{`"${api.tagline}"`}</p>
+          {
+            api?.tagline ? <p className="text-lg">{`"${api.tagline}"`}</p> : null
+          }
         </div>
         <div className="grid grid-cols-1 mt-4 md:grid-cols-3 lg:grid-cols-4">
           <div className="h-full">
